@@ -15,7 +15,7 @@
     </style>
     <style name="splashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <!-- Primary brand color. -->"
-        <item name="android:windowBackground">@drawable/workout
+        <item name="android:windowBackground">@drawable/fit
 
         </item>
         <item name="android:windowFullscreen">true</item>
