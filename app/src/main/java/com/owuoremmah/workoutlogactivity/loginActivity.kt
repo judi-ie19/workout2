@@ -37,6 +37,7 @@ class loginActivity : AppCompatActivity() {
         }
         btnLogin.setOnClickListener {
             validatelogin()
+            startActivity(Intent(this,HomePageActivity::class.java))
         }
     }
 
@@ -61,6 +62,7 @@ class loginActivity : AppCompatActivity() {
 //        if (!error){
 //
 //        }
+
         var email=etEmail.text.toString()
         var password = etPassword.text.toString()
         if (email.isBlank()){

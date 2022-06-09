@@ -3,6 +3,7 @@ package com.owuoremmah.workoutlogactivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
@@ -41,6 +42,7 @@ class SignupActivity : AppCompatActivity() {
 
 
 
+
         tvLogin.setOnClickListener {
             var intent=Intent(this,loginActivity::class.java)
             startActivity(intent)
@@ -53,29 +55,55 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun validatesignup() {
+        var error=false
+        tilEmail.error=null
+        tilLastName.error=null
+        tilconfirm.error=null
+        tilFirstName.error=null
+        tilPassword.error=null
         var firstname = etFirstName.text.toString()
         var lastname = etLastName.text.toString()
         var email = etEmail.text.toString()
         var password = etPassword.text.toString()
         var confirmpassword = etConfirm.text.toString()
 
+
         if (firstname.isBlank()) {
             tilFirstName.error = "First name is required"
+            error=true
         }
         if (lastname.isBlank()) {
-            tilLastName.error = "First name is required"
+            tilLastName.error = "Last name is required"
+            error=true
         }
         if (email.isBlank()) {
-            tilEmail.error = "First name is required"
+            tilEmail.error = "email is required"
+            error=true
+
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            tilEmail.error="Not a valid email address"
+            error=true
+
         }
         if (password.isBlank()) {
-            tilPassword.error = "First name is required"
+            tilPassword.error = "Password is required"
+            error=true
         }
         if (confirmpassword.isBlank()) {
-            tilconfirm.error = "First name is required"
+            tilconfirm.error = "confirm password"
+            error=true
 
 
         }
+        if (password != confirmpassword) {
+            tilconfirm.error = "do not match"
+            error=true
+        }
+        if (!error){
+
+        }
+
     }
 }
 
