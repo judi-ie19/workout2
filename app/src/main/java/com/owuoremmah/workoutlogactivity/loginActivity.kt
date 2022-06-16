@@ -27,7 +27,6 @@ class loginActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         tilPassword = findViewById(R.id.tilPassword)
         etPassword = findViewById(R.id.etPassword)
-//       btnsignup = findViewById(R.id.btnsignup)
         tvSignup = findViewById(R.id.tvSignup)
 
 
