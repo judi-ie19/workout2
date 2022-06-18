@@ -8,46 +8,27 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.owuoremmah.workoutlogactivity.databinding.ActivityLogin2Binding
+import com.owuoremmah.workoutlogactivity.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
-    lateinit var tilEmail: TextInputLayout
-    lateinit var tilPassword: TextInputLayout
-    lateinit var tilFirstName: TextInputLayout
-    lateinit var tvLogin: TextView
-    lateinit var tilLastName: TextInputLayout
-    lateinit var tilconfirm: TextInputLayout
-    lateinit var btnSignup: Button
-    lateinit var etEmail: TextInputEditText
-    lateinit var etPassword: TextInputEditText
-    lateinit var etFirstName: TextInputEditText
-    lateinit var etLastName: TextInputEditText
-    lateinit var etConfirm: TextInputEditText
-
+   lateinit var binding: ActivitySignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
-        btnSignup = findViewById(R.id.btnSignup)
-        tilFirstName = findViewById(R.id.tilFirstname)
-        tilPassword = findViewById(R.id.tilPassword)
-        tilEmail = findViewById(R.id.tilEmail)
-        tilconfirm = findViewById(R.id.tilConfirm)
-        tilLastName = findViewById(R.id.tilLastName)
-        etConfirm = findViewById(R.id.etConfirm)
-        etLastName = findViewById(R.id.etLastName)
-        etPassword = findViewById(R.id.etPassword)
-        etFirstName = findViewById(R.id.etFirstName)
-        etEmail = findViewById(R.id.etEmail)
-        tvLogin=findViewById(R.id.tvLogin)
+        binding= ActivitySignupBinding.inflate(layoutInflater)
+        validatesignup()
 
 
 
 
-        tvLogin.setOnClickListener {
+
+
+        binding.tvLogin.setOnClickListener {
             var intent=Intent(this,loginActivity::class.java)
             startActivity(intent)
         }
-        btnSignup.setOnClickListener {
+        binding.btnSignup.setOnClickListener {
             validatesignup()
 
         }
@@ -55,54 +36,46 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun validatesignup() {
-        var error=false
-        tilEmail.error=null
-        tilLastName.error=null
-        tilconfirm.error=null
-        tilFirstName.error=null
-        tilPassword.error=null
-        var firstname = etFirstName.text.toString()
-        var lastname = etLastName.text.toString()
-        var email = etEmail.text.toString()
-        var password = etPassword.text.toString()
-        var confirmpassword = etConfirm.text.toString()
+
+        var firstname = binding.etFirstName.text.toString()
+        var lastname = binding.etLastName.text.toString()
+        var email = binding.etEmail.text.toString()
+        var password =binding. etPassword.text.toString()
+        var confirmpassword = binding.etConfirm.text.toString()
 
 
         if (firstname.isBlank()) {
-            tilFirstName.error = "First name is required"
-            error=true
+            binding.tilFirstname.error= "First name is required"
         }
         if (lastname.isBlank()) {
-            tilLastName.error = "Last name is required"
-            error=true
+            binding.tilLastName.error = "Last name is required"
+
         }
         if (email.isBlank()) {
-            tilEmail.error = "email is required"
-            error=true
+           binding. tilEmail.error = "email is required"
+
 
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            tilEmail.error="Not a valid email address"
-            error=true
+            binding.tilEmail.error="Not a valid email address"
+
 
         }
         if (password.isBlank()) {
-            tilPassword.error = "Password is required"
-            error=true
+            binding.tilPassword.error = "Password is required"
+
         }
         if (confirmpassword.isBlank()) {
-            tilconfirm.error = "confirm password"
-            error=true
+            binding.tilConfirm.error = "confirm password"
 
 
         }
         if (password != confirmpassword) {
-            tilconfirm.error = "do not match"
-            error=true
-        }
-        if (!error){
+           binding.tilConfirm.error = "do not match"
 
         }
+
+
 
     }
 }
