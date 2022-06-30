@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#F5F0F6"
-    android:backgroundTint="#EEEBEF"
+    android:background="#864E91"
+    android:backgroundTint="#D5DEE6"
     tools:context=".SignupActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFirstname"
         android:layout_width="0dp"
-        app:startIconDrawable="@drawable/ic_baseline_person_24"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter First Name" />
+            android:hint="@string/enter_first_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -34,17 +34,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="34dp"
-        app:startIconDrawable="@drawable/ic_baseline_person_24"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilFirstname">
+        app:layout_constraintTop_toBottomOf="@+id/tilFirstname"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Last Name" />
+            android:hint="@string/enter_last_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,18 +52,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        app:startIconDrawable="@drawable/ic_baseline_email_24"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilLastName">
+        app:layout_constraintTop_toBottomOf="@+id/tilLastName"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter email" />
+            android:hint="@string/enter_email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,18 +71,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail"
+        app:startIconDrawable="@drawable/ic_baseline_lock_open_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter password" />
+            android:hint="@string/enter_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -90,18 +90,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword">
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+        app:startIconDrawable="@drawable/ic_baseline_lock_open_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm password" />
+            android:hint="@string/confirm_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -111,7 +111,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="24dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilConfirm" />
@@ -123,7 +123,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="24dp"
-        android:text="Already have an account? Sign Up"
+        android:text="@string/already_have_an_account_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
