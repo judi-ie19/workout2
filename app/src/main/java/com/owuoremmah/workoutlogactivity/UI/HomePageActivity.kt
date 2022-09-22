@@ -1,11 +1,9 @@
-package com.owuoremmah.workoutlogactivity
+package com.owuoremmah.workoutlogactivity.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentContainerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.owuoremmah.workoutlogactivity.R
 import com.owuoremmah.workoutlogactivity.databinding.ActivityHomePageBinding
-import com.owuoremmah.workoutlogactivity.databinding.ActivitySignupBinding
 
 class HomePageActivity : AppCompatActivity() {
    lateinit var binding: ActivityHomePageBinding

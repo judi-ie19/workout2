@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.owuoremmah.workoutlogactivity">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,19 +16,19 @@
         android:theme="@style/Theme.WorkoutlogActivity"
         tools:targetApi="31">
         <activity
-            android:name=".HomePageActivity"
+            android:name=".UI.HomePageActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".UI.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".loginActivity"
+            android:name=".UI.loginActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".LoginActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".UI.SplashActivity"
             android:exported="true"
             android:theme="@style/splashTheme">
             <intent-filter>
