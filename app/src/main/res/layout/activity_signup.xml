@@ -143,7 +143,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tilConfirm">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etphonnumber"
+            android:id="@+id/etphonenumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="phonenumber" />
